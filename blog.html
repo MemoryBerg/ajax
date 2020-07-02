@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./css/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header__wrapper">
+            <a href="./index.html" class="header__logo logo">
+                BlogWorld
+            </a>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <button id="add-post">Add new post</button>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#portfolio">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./blog.html" class="active">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#pages">
+                            Pages
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#about">
+                            About
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#contact">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="title" id="main">
+            <h2 class="title__head head2">Blog</h2>
+            <div class="title__line line"></div>
+            <div class="title__search search">
+                <div class="input-group mb-3" id="search">
+                    <input type="text" class="form-control input input-search" placeholder="Search by author"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary button__search" type="button" id="button-addon2">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="post d-flex container" id="post" hidden>
+                <div class="post__wrapper row">
+                    <div class="post__media col-6">
+                        <button class="post__play">
+                            <object data="./img/atom-icons/a-icon-play.svg" type="image/svg+xml"
+                                class="icon icon__play"></object>
+                        </button>
+                        <img src="./img/blog/Imgage-post-1.png" alt="post 1" class="post__pic">
+                    </div>
+                    <div class="post__info col">
+                        <div class="post__type">
+                            <object data="./img/atom-icons/a-icon-playmini.svg" type="image/svg+xml"
+                                class="icon icon__playmini"></object>
+                        </div>
+                        <div class="post__wrapper d-flex author">
+                            <img src="./img/blog/Neil.png" alt="neil" class="post__userpic author__userpic">
+                            <div class="post__wrapper">
+                                <h4 class="post__username author__username head4">Neil Richards</h4>
+                                <div class="post__data data">
+                                    <span class="post__data data">11 oct, 2019</span>
+                                    <span class="post__data data data-read">7 min read</span>
+                                    <span class="post__data data data-comment"><a href="#">19</a></span>
+                                    <div class="post__rate author__rate">
+                                        <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                            class="icon icon__star"></object>
+                                        <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                            class="icon icon__star"></object>
+                                        <object data="./img/atom-icons/Group.svg" type="image/svg+xml"
+                                            class="icon icon__star icon__star-half">
+                                        </object>
+                                        <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                            class="icon icon__star icon__star-grey"></object>
+                                        <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                            class="icon icon__star icon__star-grey"></object>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post__wrapper post__wrapper-info">
+                            <h3 class="post__title head3">In the Future We Will All Live in Star Wars</h3>
+                            <p class="post__paragraph paragraph">The thing you’re doing now, reading prose on a screen,
+                                is
+                                going out of fashion. The defining narrative of our online moment concerns the decline
+                                of
+                                text, and the exploding reach and power of audio and video …</p>
+                        </div>
+                        <button class="btn button button__light post__button">Read more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper d-flex justify-content-between align-items-center">
+            <div class="footer__socials socials">
+                <a href="https://www.facebook.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-facebook.svg" type="image/svg+xml"
+                        class="icon icon__facebook"></object>
+                </a>
+                <a href="https://www.instagram.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-instagram.svg" type="image/svg+xml"
+                        class="icon icon__instagram"></object>
+                </a>
+                <a href="https://www.instagram.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-dribbble.svg" type="image/svg+xml"
+                        class="icon icon__dribbble"></object>
+                </a>
+            </div>
+            <a href="./index.html" class="footer__logo logo">
+                BlogWorld
+            </a>
+            <p class="footer__paragraph paragraph paragraph-small">©2019 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./js/blog.js"></script>
+    <script src="./js/new-post.js"></script>
+    <script src="./js/post.js"></script>
+</body>
+
+</html>

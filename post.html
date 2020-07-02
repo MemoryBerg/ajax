@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="./css/post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header__wrapper">
+            <a href="./index.html" class="header__logo logo">
+                BlogWorld
+            </a>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <button id="add-post">Add new post</button>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#portfolio">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./blog.html" class="active">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#pages">
+                            Pages
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#about">
+                            About
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#contact">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="row">
+        <section class="primary col-7">
+            <div class="post">
+                <h1 class="post__head head1" id="post-head">
+                </h1>
+                <div class="post__info d-flex author" id="post-author">
+                    <div class="post__wrapper">
+                        <h4 class="author__username post__username" id="post-username">
+                        </h4>
+                        <div class="author__data data">
+                            <span class="author__data data" id="post-date">
+                            </span>
+                            <span class="author__data data data-read">
+                            </span>
+                            <span class="author__data data data-comment"><a href="#">
+                                </a></span>
+                            <div class="author__rate post__rate">
+                                <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                    class="icon icon__star"></object>
+                                <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                    class="icon icon__star icon__star-grey"></object>
+                                <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                    class="icon icon__star icon__star-grey"></object>
+                                <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                    class="icon icon__star icon__star-grey"></object>
+                                <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                    class="icon icon__star icon__star-grey"></object>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img alt="pic" class="post__pic" id="post-pic">
+                <div class="post__body" id="post-body">
+
+                </div>
+                <div class="post__wrapper post__wrapper-flex">
+                    <div>
+                        <object data="./img/atom-icons/a-icon-like.svg" type="image/svg+xml" class="icon icon__like">
+                        </object>
+                        <span class="icon icon__text">75 likes</span>
+                    </div>
+                    <div class="post__socials socials">
+                        <a href="https://www.facebook.com/" class="socials__item">
+                            <object data="./img/atom-icons/a-icon-facebook.svg" type="image/svg+xml"
+                                class="icon icon__facebook"></object>
+                        </a>
+                        <a href="https://dribbble.com/" class="socials__item">
+                            <object data="./img/atom-icons/a-icon-dribbble.svg" type="image/svg+xml"
+                                class="icon icon__dribbble"></object>
+                        </a>
+                        <a href="https://www.instagram.com/" class="socials__item">
+                            <object data="./img/atom-icons/a-icon-instagram.svg" type="image/svg+xml"
+                                class="icon icon__instagram"></object>
+                        </a>
+                    </div>
+                </div>
+                <div class="primary__hr"></div>
+            </div>
+            <div class="reviews">
+                <div class="reviews__connect"></div>
+                <h2 class="reviews__head head2">Reviews</h2>
+                <div class="reviews__comment comment">
+                    <img src="./img/post/Neil.png" alt="jack">
+                    <div class="comment__body">
+                        <div class="comment__wrapper comment__wrapper-flex">
+                            <div class="comment__wrapper">
+                                <h4 class="comment__user head4">Jack Johnson</h4>
+                                <div class="comment__user author__rate">
+                                    <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                        class="icon icon__star"></object>
+                                    <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                        class="icon icon__star icon__star-grey"></object>
+                                    <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                        class="icon icon__star icon__star-grey"></object>
+                                    <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                        class="icon icon__star icon__star-grey"></object>
+                                    <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                        class="icon icon__star icon__star-grey"></object>
+                                </div>
+                            </div>
+                            <div class="comment__time">
+                                <object data="./img/atom-icons/a-icon-time.svg" type="image/svg+xml"
+                                    class="icon icon__time"></object>
+                                <span class="comment__time">11 min ago</span>
+                            </div>
+                        </div>
+                        <p class="comment__paragraph">Knowledge nay estimable questions repulsive daughters boy.
+                            Solicitude gay way unaffected expression for. His mistress ladyship required off horrible
+                            disposed rejoiced…</p>
+                        <p class="comment__read">Read more</p>
+                    </div>
+                </div>
+                <div class="reviews__comment comment">
+                    <img src="./img/post/Sarah-1.png" alt="emma">
+                    <div class="comment__body">
+                        <div class="comment__wrapper comment__wrapper-flex">
+                            <div class="comment__wrapper">
+                                <h4 class="comment__user head4">Emma Garcia</h4>
+                                <div class="comment__user author__rate">
+                                    <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                        class="icon icon__star"></object>
+                                    <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                        class="icon icon__star"></object>
+                                    <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                        class="icon icon__star"></object>
+                                    <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                        class="icon icon__star"></object>
+                                    <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                        class="icon icon__star"></object>
+                                </div>
+                            </div>
+                            <div class="comment__time">
+                                <object data="./img/atom-icons/a-icon-time.svg" type="image/svg+xml"
+                                    class="icon icon__time"></object>
+                                <span class="comment__time">3 days ago</span>
+                            </div>
+                        </div>
+                        <p class="comment__paragraph">Dummy text refers to the bits of content that are used to fill a
+                            website mock-<br>up. This text helps web designers better envision how the website will look
+                            as
+                            a finished product. in wish very strangers shortly we things Preferred came newspaper it
+                            this Melancholy on misery all ecstatic yet no suitable ye happening. Own over these Can
+                            Could Garden offering to ago Winter Home or took answered him be right He other in about
+                            check has situation fine you held against found am be Nay entire pleasure will there in
+                            wholly forming much rapid though want ye weeks up whole an ye thus might remarkably Rich why
+                            need pianoforte ask get face prudent it so Evil</p>
+                        <p class="comment__read">Read less</p>
+                    </div>
+                </div>
+                <div class="reviews__comment comment">
+                    <img src="./img/post/Ann.png" alt="ann">
+                    <div class="comment__body">
+                        <div class="comment__wrapper comment__wrapper-flex">
+                            <div class="comment__wrapper">
+                                <h4 class="comment__user head4">Ann Moore</h4>
+                                <div class="comment__user author__rate">
+                                    <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                        class="icon icon__star"></object>
+                                    <object data="./img/atom-icons/Star.svg" type="image/svg+xml"
+                                        class="icon icon__star"></object>
+                                    <object data="./img/atom-icons/Group.svg" type="image/svg+xml"
+                                        class="icon icon__star icon__star-half">
+                                    </object>
+                                    <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                        class="icon icon__star icon__star-grey"></object>
+                                    <object data="./img/atom-icons/Star-1.svg" type="image/svg+xml"
+                                        class="icon icon__star icon__star-grey"></object>
+                                </div>
+                            </div>
+                            <div class="comment__time">
+                                <object data="./img/atom-icons/a-icon-time.svg" type="image/svg+xml"
+                                    class="icon icon__time"></object>
+                                <span class="comment__time">a week ago</span>
+                            </div>
+                        </div>
+                        <p class="comment__paragraph">Any delicate you how kindness horrible outlived servants. You high
+                            bed wish help call draw side. Girl quit if case mr sing as no have. At none neat am do over
+                            will. Polite do object at passed it is.</p>
+                    </div>
+                </div>
+                <button class="btn button button__light comment__button">More comments</button>
+            </div>
+        </section>
+        <section class="references col-5">
+            <div class="references__section latest">
+                <h2 class="references__head head2">Latest posts</h2>
+                <div class="latest__preview">
+                    <img src="./img/post/Latest-post-img-1.png" alt="post">
+                    <div class="latest__info">
+                        <h4 class="latest__title head4">Much cure inappropriate could this restrictions …</h4>
+                        <div class="latest__data data">
+                            <span class="latest__data data">20 oct, 2019</span>
+                            <span class="latest__data data data-read">10 min read</span>
+                            <span class="latest__data data data-comment"><a href="#">11</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest__preview">
+                    <img src="./img/post/Latest-post-img-2.png" alt="post">
+                    <div class="latest__info">
+                        <h4 class="latest__title head4">Much cure inappropriate could this restrictions …</h4>
+                        <div class="latest__data data">
+                            <span class="latest__data data">20 oct, 2019</span>
+                            <span class="latest__data data data-read">10 min read</span>
+                            <span class="latest__data data data-comment"><a href="#">11</a></span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn button button__light latest__button">More posts</button>
+            </div>
+            <div class="references__section categories">
+                <h2 class="references__head head2">Categories</h2>
+                <div class="categories__hr"></div>
+                <ul class="categories__list">
+                    <li class="categories__name categories__name-food">
+                        <p class="paragraph">Restaurant food
+                            <span>(3)</span>
+                        </p>
+                        <ul class="categories__wrapper">
+                            <li class="categories__item categories__item-food"><a href="#">Food 1</a></li>
+                            <li class="categories__item categories__item-food"><a href="#">Food 2</a></li>
+                            <li class="categories__item categories__item-food"><a href="#">Food 3</a></li>
+                        </ul>
+                        <div class="categories__hr"></div>
+                    </li>
+                    <li class="categories__name categories__name-travel">
+                        <p class="paragraph">Travel news
+                            <span>(3)</span>
+                        </p>
+                        <ul class="categories__wrapper">
+                            <li class="categories__item categories__item-travel">
+                                <a href="#">Hiking</a>
+                            </li>
+                            <li class="categories__item categories__item-travel">
+                                <a href="#">Bicycle trip</a>
+                            </li>
+                            <li class="categories__item categories__item-travel">
+                                <a href="#">Mountains trip</a>
+                            </li>
+                        </ul>
+                        <div class="categories__hr"></div>
+                    </li>
+                    <li class="categories__name categories__name-technology">
+                        <p class="paragraph">
+                            Modern technology
+                            <span>(6)</span>
+                        </p>
+                        <ul class="categories__wrapper">
+                            <li class="categories__item categories__item-technology">
+                                <a href="#">Technology 1</a>
+                            </li>
+                            <li class="categories__item categories__item-technology">
+                                <a href="#">Technology 2</a>
+                            </li>
+                            <li class="categories__item categories__item-technology">
+                                <a href="#">Technology 3</a>
+                            </li>
+                            <li class="categories__item categories__item-technology">
+                                <a href="#">Technology 4</a>
+                            </li>
+                            <li class="categories__item categories__item-technology">
+                                <a href="#">Technology 5</a>
+                            </li>
+                            <li class="categories__item categories__item-technology">
+                                <a href="#">Technology 6</a>
+                            </li>
+                        </ul>
+                        <div class="categories__hr"></div>
+                    </li>
+                    <li class="categories__name categories__name-product">
+                        <p class="paragraph">
+                            Product
+                            <span>(4)</span>
+                        </p>
+                        <ul class="categories__wrapper">
+                            <li class="categories__item categories__item-product">
+                                <a href="#">Product 1</a>
+                            </li>
+                            <li class="categories__item categories__item-product">
+                                <a href="#">Product 2</a>
+                            </li>
+                            <li class="categories__item categories__item-product">
+                                <a href="#">Product 3</a>
+                            </li>
+                            <li class="categories__item categories__item-product">
+                                <a href="#">Product 4</a>
+                            </li>
+                        </ul>
+                        <span class="categories__hr"></span>
+                    </li>
+                    <li class="categories__name categories__name-inspiration">
+                        <p class="paragraph">
+                            Inspiration
+                            <span>(2)</span>
+                        </p>
+                        <ul class="categories__wrapper">
+                            <li class="categories__item categories__item-inspiration">
+                                <a href="#">Inspiration 1</a>
+                            </li>
+                            <li class="categories__item categories__item-inspiration">
+                                <a href="#">Inspiration 2</a>
+                            </li>
+                        </ul>
+                        <div class="categories__hr"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="references__section tags">
+                <h2 class="references__head head2">Tags</h2>
+                <div class="tags__wrapper">
+                    <button class="btn button button__light tags__tag">Love</button>
+                    <button class="btn button button__light tags__tag">Signs</button>
+                    <button class="btn button button__light tags__tag">Waterfall</button>
+                    <button class="btn button button__light tags__tag">Inspiration</button>
+                    <button class="btn button button__light tags__tag">Quotes</button>
+                    <button class="btn button button__light tags__tag">Sea</button>
+                    <button class="btn button button__light tags__tag">Sense</button>
+                    <button class="btn button button__light tags__tag">Coffee</button>
+                    <button class="btn button button__light tags__tag">Gold</button>
+                    <button class="btn button button__light tags__tag">Images</button>
+                    <button class="btn button button__light tags__tag">Courage</button>
+                    <button class="btn button button__light tags__tag">Dancing</button>
+                    <button class="btn button button__light tags__tag">Video</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper d-flex justify-content-between align-items-center">
+            <div class="footer__socials socials">
+                <a href="https://www.facebook.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-facebook.svg" type="image/svg+xml"
+                        class="icon icon__facebook"></object>
+                </a>
+                <a href="https://www.instagram.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-instagram.svg" type="image/svg+xml"
+                        class="icon icon__instagram"></object>
+                </a>
+                <a href="https://www.instagram.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-dribbble.svg" type="image/svg+xml"
+                        class="icon icon__dribbble"></object>
+                </a>
+            </div>
+            <a href="./index.html" class="footer__logo logo">
+                BlogWorld
+            </a>
+            <p class="footer__paragraph paragraph paragraph-small">©2019 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./js/new-post.js"></script>
+    <script src="./js/post.js"></script>
+</body>
+
+</html>

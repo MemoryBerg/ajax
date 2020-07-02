@@ -1,0 +1,18 @@
+.title {
+    &__icon {
+        fill: $main-dark-color;
+    }
+
+    &__line {
+        width: 49px;
+        margin-top: 2px;
+    }
+
+    &__search {
+        margin: 57px 0 28px calc(100% - 320px);
+    }
+
+    &__button {
+        align-self: flex-start;
+    }
+}
