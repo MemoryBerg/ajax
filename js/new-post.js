@@ -263,7 +263,9 @@
             })
             .catch(error => {
                 alert(`Error: ${error} ${error.message}`);
-            })
+            });
+        const delForm = document.getElementById('add');
+        delForm.remove();
     }
 
     function validateTitle() {

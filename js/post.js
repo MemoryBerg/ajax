@@ -42,7 +42,7 @@
         postDate.innerText = data.postDate;
 
         if (data.image === '') {
-            postPic.delete();
+            postPic.remove();
         }
         post.innerText = data.title;
         postPic.setAttribute('src', data.image);
