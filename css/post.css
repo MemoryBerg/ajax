@@ -3694,7 +3694,7 @@ main {
 }
 
 .data {
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 4px;
   color: #818181;
 }
@@ -3813,12 +3813,16 @@ div[data-result] {
   margin-right: 10px;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .header {
   padding: 28px 0;
   color: #4D4C49;
   position: absolute;
   width: 100%;
-  z-index: 10;
+  z-index: 11;
 }
 .header__wrapper {
   max-width: 1160px;
@@ -3891,10 +3895,35 @@ div[data-result] {
   align-self: start;
 }
 .add__button {
-  align-self: center;
+  margin: 0 10px;
 }
 .add__desc {
   height: 150px;
+}
+.add__date {
+  max-width: 220px;
+}
+.add__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.add__close:before, .add__close:after {
+  content: "";
+  border-top: 1px solid black;
+  width: 20px;
+  display: block;
+  transform: rotate(45deg);
+  position: absolute;
+}
+.add__close::after {
+  transform: rotate(-45deg);
+}
+.add__wrapper {
+  margin: 0 auto;
 }
 
 .footer {
@@ -3997,7 +4026,7 @@ div[data-result] {
   letter-spacing: 0.4px;
 }
 .post__info {
-  margin: 30px -2px 20px;
+  margin: 65px -2px 20px;
 }
 .post__username {
   letter-spacing: 0.5px;
@@ -4010,6 +4039,9 @@ div[data-result] {
 }
 .post__paragraph:first-of-type {
   margin-top: 12px;
+}
+.post__body {
+  margin-top: 15px;
 }
 .post__body-techo {
   margin-top: 20px;

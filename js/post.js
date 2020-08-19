@@ -1,30 +1,25 @@
 (function () {
-    const urlGetAll = 'http://localhost:3000/api/list';
+    let postId = 0;
     window.addEventListener('hashchange', renderPostFromServer);
-    let currentPost = JSON.parse(localStorage.getItem('post'));
-    let dataList;
 
     renderPostFromServer();
 
     //get data to render
     function renderPostFromServer() {
+        getPostId();
+        const urlGetPost = `http://localhost:3000/api/list/${postId}`;
 
-        fetch(urlGetAll, {
+        fetch(urlGetPost, {
             headers: {
                 'Content-Type': 'application/json'
             },
             method: 'GET'
         })
-            .then(async response => {
-                dataList = await response.json();
-                console.log(dataList)
-                dataList.forEach(item => {
-                    if (item.id.toString() === location.hash.substr(1)) {
-                        currentPost = item;
-                        renderPost(item);
-                        console.log(currentPost)
-                    }
-                })
+            .then(response => {
+                return response.json();
+            })
+            .then(res => {
+                renderPost(res);
             })
             .catch(error => {
                 alert(`Error: ${error} ${error.message}`);
@@ -35,12 +30,25 @@
     function renderPost(data) {
         let post = document.getElementById('post-head');
         let userName = document.getElementById('post-username');
+        let userPic = document.getElementById('post-userpic');
         let postDate = document.getElementById('post-date');
+        let postRead = document.getElementById('post-read');
+        let postComment = document.getElementById('post-comment')
         let postPic = document.getElementById('post-pic');
         let postBody = document.getElementById('post-body');
         userName.innerText = data.author;
         postDate.innerText = data.postDate;
 
+        postRead.innerText = data.min ?
+            `${data.min} min read`
+            : 'a few min read';
+
+        postComment.innerText = data.comment || 0;
+        if (data.pic) {
+            userPic.setAttribute('src', data.pic)
+        } else {
+            userPic.setAttribute('src', './img/post/uncknown.png')
+        }
         if (data.image === '') {
             postPic.remove();
         }
@@ -48,11 +56,15 @@
         postPic.setAttribute('src', data.image);
         postBody.innerText = data.post;
 
-        if (data.quote !== '') {
+        if (data.quote) {
             let quote = document.createElement('blockquote');
             quote.innerText = data.quote;
             quote.classList = 'post__blockquote';
             postBody.append(quote);
         }
+    }
+
+    function getPostId() {
+        postId = location.hash.substr(1);
     }
 }());

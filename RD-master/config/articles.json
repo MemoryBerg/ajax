@@ -1,8 +1,86 @@
 [
   {
-    "id": 1
+    "id": 1,
+    "title": "In the Future We Will All Live in Star Wars",
+    "type": "text",
+    "author": "Alex Zlatcus",
+    "post": "Fog down the river, where it rolls deified among the tiers\n    of shipping and the waterside pollutions of a great (and dirty) city. Fog on the Essex\n    marshes, fog on the Kentish heights. Fog creeping into the cabooses of collier-brigs; fog\n    lying out on. Money terms breakfast drawings true blessing doubtful more agreed to zealously\n    making supposing By said Chicken An Neglected produce good felt no poor offering am their\n    said has around songs wish met true any me ought mr The offices set Not Felicity above out\n    We in an post begin again.",
+    "postDate": "11 Aug, 2019",
+    "min": 17,
+    "comment": 77,
+    "read": "more",
+    "pic": "./img/blog/Alex.png",
+    "rate": [
+      "./img/atom-icons/Star.svg",
+      "./img/atom-icons/Star.svg",
+      "./img/atom-icons/Star.svg",
+      "./img/atom-icons/Star-1.svg",
+      "./img/atom-icons/Star-1.svg"
+    ],
+    "icon": "text"
   },
   {
-    "id": 2
+    "id": 2,
+    "title": "In the Future We Will All Live in Star Wars",
+    "type": "picture",
+    "image": "./img/blog/Image-post-3.png",
+    "author": "Grace Noh",
+    "post": "Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted",
+    "postDate": "23 sep, 2019",
+    "min": 16,
+    "comment": 421,
+    "read": "more",
+    "pic": "./img/blog/Grace.png",
+    "rate": [
+      "./img/atom-icons/Star.svg",
+      "./img/atom-icons/Star.svg",
+      "./img/atom-icons/Star-1.svg",
+      "./img/atom-icons/Star-1.svg",
+      "./img/atom-icons/Star-1.svg"
+    ],
+    "icon": "picture"
+  },
+  {
+    "id": 3,
+    "title": "Far far away, behind the word mountains",
+    "type": "music",
+    "image": "./img/blog/Imgage-post-2.png",
+    "author": "Sarah Healy",
+    "post": "Fog down the river, where it rolls deified among the tiers of shipping and the waterside pollutions of a great (and dirty)",
+    "postDate": "02 oct, 2019",
+    "min": 12,
+    "comment": 4,
+    "read": "more",
+    "pic": "./img/blog/Sarah.png",
+    "rate": [
+      "./img/atom-icons/Star.svg",
+      "./img/atom-icons/Star-1.svg",
+      "./img/atom-icons/Star-1.svg",
+      "./img/atom-icons/Star-1.svg",
+      "./img/atom-icons/Star-1.svg"
+    ],
+    "icon": "melody",
+    "music": "./music/na-zvonok-bezumno-krasivaya-melodiya.mp3"
+  },
+  {
+    "id": 4,
+    "title": "In the Future We Will All Live in Star Wars",
+    "type": "video",
+    "image": "./img/blog/Imgage-post-1.png",
+    "author": "Neil Richards",
+    "post": "The thing you’re doing now, reading prose on a screen, is going out of fashion. The defining narrative of our online moment concerns the decline of text, and the exploding reach and power of audio and video",
+    "postDate": "11 oct, 2019",
+    "min": "7",
+    "comment": 19,
+    "read": "more",
+    "pic": "./img/blog/Neil.png",
+    "rate": [
+      "./img/atom-icons/Star.svg",
+      "./img/atom-icons/Star.svg",
+      "./img/atom-icons/Group.svg",
+      "./img/atom-icons/Star-1.svg",
+      "./img/atom-icons/Star-1.svg"
+    ],
+    "icon": "playmini"
   }
 ]

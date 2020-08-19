@@ -1,312 +1,389 @@
-(function () {
-    const urlPost = 'http://localhost:3000/api/create-article';
-
-    //Data to render new post form
-    const data = [
-        {
-            tagName: 'label',
-            title: 'Type of post',
-            classValue: 'add__label',
-            children: [
-                {
-                    tagName: 'select',
-                    classValue: 'add__type',
-                    attributes: [
-                        {
-                            name: 'type'
-                        }
-                    ],
-                    children: [
-                        {
-                            tagName: 'option',
-                            title: ''
-                        },
-                        {
-                            tagName: 'option',
-                            title: 'Video'
-                        },
-                        {
-                            tagName: 'option',
-                            title: 'Text'
-                        },
-                        {
-                            tagName: 'option',
-                            title: 'Audio'
-                        },
-                        {
-                            tagName: 'option',
-                            title: 'Picture'
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            tagName: 'label',
-            title: `Enter image's link`,
-            classValue: 'add__label',
-            children: [
-                {
-                    tagName: 'input',
-                    classValue: 'add__img add__input',
-                    attributes: [
-                        {
-                            name: 'image',
-                            type: 'text'
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            tagName: 'label',
-            title: 'Title',
-            classValue: 'add__label',
-            children: [
-                {
-                    tagName: 'input',
-                    classValue: 'add__title add__input',
-                    attributes: [
-                        {
-                            name: 'title',
-                            type: 'text',
-                            id: 'title-input'
-                        }
-                    ]
-                }
-            ],
-            attributes: [
-                {
-                    id: 'title'
-                }
-            ]
-        },
-        {
-            tagName: 'label',
-            title: 'Author',
-            classValue: 'add__label',
-            children: [
-                {
-                    tagName: 'input',
-                    classValue: 'add__author add__input',
-                    attributes: [
-                        {
-                            name: 'author',
-                            type: 'text'
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            tagName: 'label',
-            title: 'Post',
-            classValue: 'add__label',
-            children: [
-                {
-                    tagName: 'textarea',
-                    classValue: 'add__desc add__input',
-                    attributes: [
-                        {
-                            name: 'post',
-                            rows: 20,
-                            type: 'text'
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            tagName: 'label',
-            title: 'Quote',
-            classValue: 'add__label',
-            children: [
-                {
-                    tagName: 'textarea',
-                    classValue: 'add__quote add__input',
-                    attributes: [
-                        {
-                            name: 'quote',
-                            rows: 5,
-                            type: 'text'
-                        }
-                    ]
-                }
-            ]
-        },
-        {
+const urlPost = 'http://localhost:3000/api/create-article';
+const data = [
+    {
+        tagName: 'label',
+        title: 'Type of post',
+        classValue: 'add__label',
+        children: [
+            {
+                tagName: 'select',
+                classValue: 'add__type',
+                attributes: [
+                    {
+                        name: 'type',
+                        id: 'postType'
+                    }
+                ],
+                children: [
+                    {
+                        tagName: 'option',
+                        title: ''
+                    },
+                    {
+                        tagName: 'option',
+                        title: 'Video'
+                    },
+                    {
+                        tagName: 'option',
+                        title: 'Text'
+                    },
+                    {
+                        tagName: 'option',
+                        title: 'Audio'
+                    },
+                    {
+                        tagName: 'option',
+                        title: 'Picture'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        tagName: 'label',
+        title: `Enter image's link`,
+        classValue: 'add__label',
+        attributes: [
+            {
+                for: 'postImg'
+            }
+        ]
+    },
+    {
+        tagName: 'input',
+        classValue: 'add__img add__input',
+        attributes: [
+            {
+                name: 'image',
+                type: 'text',
+                id: 'postImg'
+            }
+        ]
+    },
+    {
+        tagName: 'label',
+        title: 'Title',
+        classValue: 'add__label',
+        attributes: [
+            {
+                for: 'postTitle',
+                id: 'labelTitle'
+            }
+        ]
+    },
+    {
+        tagName: 'input',
+        classValue: 'add__title add__input',
+        attributes: [
+            {
+                name: 'title',
+                type: 'text',
+                id: 'postTitle'
+            }
+        ]
+    },
+    {
+        tagName: 'label',
+        title: 'Author',
+        classValue: 'add__label',
+        attributes: [
+            {
+                for: 'postAuthor'
+            }
+        ]
+    },
+    {
+        tagName: 'input',
+        classValue: 'add__author add__input',
+        attributes: [
+            {
+                name: 'author',
+                type: 'text',
+                id: 'postAuthor'
+            }
+        ]
+    },
+    {
+        tagName: 'label',
+        title: 'Author',
+        classValue: 'add__label',
+        attributes: [
+            {
+                for: 'postDate'
+            }
+        ]
+    },
+    {
+        tagName: 'input',
+        classValue: 'add__date add__input',
+        attributes: [
+            {
+                type: 'date',
+                id: 'postDate'
+            }
+        ]
+    },
+    {
+        tagName: 'label',
+        title: 'Post',
+        classValue: 'add__label',
+        attributes: [
+            {
+                for: 'postBody'
+            }
+        ]
+    },
+    {
+        tagName: 'textarea',
+        classValue: 'add__desc add__input',
+        attributes: [
+            {
+                name: 'post',
+                rows: 20,
+                type: 'text',
+                id: 'postBody'
+            }
+        ]
+    },
+    {
+        tagName: 'label',
+        title: 'Quote',
+        classValue: 'add__label',
+        attributes: [
+            {
+                for: 'postQuote'
+            }
+        ]
+    },
+    {
+        tagName: 'textarea',
+        classValue: 'add__quote add__input',
+        attributes: [
+            {
+                name: 'quote',
+                rows: 5,
+                type: 'text',
+                id: 'postQuote'
+            }
+        ]
+    },
+    {
+        tagName: 'div',
+        classValue: 'add__wrapper',
+        children: [{
             tagName: 'button',
             title: 'Add',
             classValue: 'add__button btn button button__dark',
             attributes: [
                 {
-                    id: 'add-button',
+                    id: 'postButton',
                     disabled: ''
                 }
             ]
-        }
-    ];
-
-    const addButton = document.getElementById('add-post');
-    const header = document.getElementById('header');
-
-    //create form wrapper 
-
-    let formWrapper = document.createElement('div');
-    formWrapper.classList = 'add';
-    formWrapper.setAttribute('id', 'add');
-    let formPost = document.createElement('form');
-    formPost.classList = 'add__form';
-    // formPost.setAttribute('onsubmit', 'sendPostToServer.call(this)')
-    formPost.addEventListener('submit', sendPostToServer.bind(formPost))
-    addButton.addEventListener('click', renderFormNewPost.bind(null, data, formPost));
-
-    //render new form element from data
-    function render(args, parent) {
-        let newElement = document.createElement(args.tagName);
-
-        if (args.classValue) {
-            newElement.classList = args.classValue;
-        }
-        if (args.title) {
-            newElement.innerText = args.title
-        }
-        if (args.attributes) {
-            Object.entries(args.attributes).forEach(item => {
-                const attrs = item[1];
-                for (const [key, value] of Object.entries(attrs)) {
-                    newElement.setAttribute(key, value)
+        },
+        {
+            tagName: 'button',
+            title: 'Reset',
+            classValue: 'add__button btn button button__dark',
+            attributes: [
+                {
+                    type: 'reset',
+                    id: 'resetButton',
                 }
-            })
+            ]
         }
-        if (args.children) {
-            const children = args.children;
-            children.forEach(child => render(child, newElement))
-        }
-        parent.appendChild(newElement);
-        return newElement;
+        ]
     }
+];
 
-    //render new post form
-    function renderFormNewPost(array, parentNode) {
-        const form = document.getElementById('add');
-        if (form !== null) {
-            return;
-        }
-        let formHeader = document.createElement('div');
-        formHeader.innerText = 'New Post';
-        formHeader.classList = 'add__post head2';
-        formWrapper.append(formHeader, formPost);
-        header.append(formWrapper);
-        array.forEach(el => {
-            render(el, parentNode)
-        });
-        const title = document.getElementById('title-input');
-        title.addEventListener('blur', validateTitle.bind(title));
+const addButton = document.getElementById('add-post');
+const header = document.getElementById('header');
+let lastPostId = 0;
+
+let formWrapper = document.createElement('div');
+formWrapper.classList = 'add';
+formWrapper.setAttribute('id', 'add');
+formWrapper.style.display = 'none';
+let formPost = document.createElement('form');
+formPost.setAttribute('id', 'form')
+formPost.classList = 'add__form';
+
+let closeButton = document.createElement('button');
+closeButton.classList = 'add__close';
+closeButton.setAttribute('id', 'postClose');
+addButton.addEventListener('click', openForm);
+closeButton.addEventListener('click', closeForm)
+
+renderFormNewPost(data, formPost)
+
+function render(args, parent) {
+    let newElement = document.createElement(args.tagName);
+
+    if (args.classValue) {
+        newElement.classList = args.classValue;
     }
-
-    let postInfo = {};
-
-    //get info from post form 
-    function getPostInfo() {
-        const data = this.children;
-        Array.from(data).forEach(element => {
-            if (element.firstElementChild && element.tagName === 'LABEL') {
-                const elemKey = element.firstElementChild.getAttribute('name');
-                const keyValue = element.firstElementChild.value;
-                postInfo[elemKey] = keyValue;
+    if (args.title) {
+        newElement.innerText = args.title
+    }
+    if (args.attributes) {
+        Object.entries(args.attributes).forEach(item => {
+            const attrs = item[1];
+            for (const [key, value] of Object.entries(attrs)) {
+                newElement.setAttribute(key, value)
             }
-        });
-        const date = new Date();
-        let newDate = date.toLocaleString('en-Gb', {
+        })
+    }
+    if (args.children) {
+        const children = args.children;
+        children.forEach(child => render(child, newElement))
+    }
+    parent.appendChild(newElement);
+    return newElement;
+}
+
+
+function renderFormNewPost(array, parentNode) {
+    let formHeader = document.createElement('div');
+    formHeader.innerText = 'New Post';
+    formHeader.classList = 'add__post head2';
+    formWrapper.append(formHeader, formPost, closeButton);
+    header.append(formWrapper);
+    array.forEach(el => render(el, parentNode));
+    const title = document.getElementById('postTitle');
+    title.addEventListener('blur', validateTitle.bind(title));
+    document.getElementById('form').addEventListener('submit', getPostInfo.bind(parentNode))
+}
+
+let postInfo = {};
+
+function getPostInfo() {
+    event.preventDefault();
+    postInfo = {
+        type: event.target.postType.value,
+        author: event.target.postAuthor.value,
+        image: event.target.postImg.value,
+        post: event.target.postBody.value,
+        quote: event.target.postQuote.value,
+        title: event.target.postTitle.value
+    }
+
+    const months = {
+        01: 'jan',
+        02: 'feb',
+        03: 'mar',
+        04: 'apr',
+        05: 'may',
+        06: 'june',
+        07: 'july',
+        08: 'aug',
+        09: 'sept',
+        10: 'oct',
+        11: 'nov',
+        12: 'dec'
+    }
+    let date = event.target.postDate.value;
+    const day = date.slice(-2);
+    const month = +date.slice(5, 7);
+    const year = date.slice(0, 4);
+    let postDate = day + ' ' + months[month] + ', ' + year;
+
+    if (!date) {
+        date = new Date();
+        postDate = date.toLocaleString('en-Gb', {
             day: 'numeric',
             month: 'short',
             year: 'numeric'
         }).toLowerCase();
-        postInfo.postDate = newDate.replace(new RegExp(' 2'), ',' + ' 2');
-        return postInfo;
+        postDate = postDate.replace(new RegExp(' 2'), ',' + ' 2');
     }
 
-    let dataList;
+    postInfo.postDate = postDate;
+    sendPostToServer(JSON.stringify(postInfo))
+}
 
-    //send info to server after submit
-    async function sendPostToServer() {
-        event.preventDefault();
-        getPostInfo.call(this)
-        const postJson = JSON.stringify(postInfo);
-
-        await fetch(urlPost, {
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            method: 'POST',
-            body: postJson
+function sendPostToServer(body) {
+    fetch(urlPost, {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: body
+    })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(res => console.log(res.message));
+            } else {
+                return response.json();
+            }
         })
-            .then(async response => {
-                const responseOk = 200;
-                if (response.status === responseOk) {
+        .then(res => {
+            lastPostId = res[res.length - 1].id;
+            goToPostPage(lastPostId);
+        })
+}
 
-                    dataList = await response.json();
-                    let dataToRender;
-                    if (Array.isArray(dataList)) {
-                        dataToRender = dataList[dataList.length - 1]
-                    } else {
-                        dataToRender = dataList;
-                    }
+function goToPostPage(postId) {
+    const currentLocation = location.href;
+    const positionTochange = currentLocation.lastIndexOf('/');
+    let newLocation = currentLocation.slice(0, positionTochange + 1) + 'post.html#' + postId;
+    location = newLocation;
 
-                    //redirect user to the Post Page
-                    const currentLocation = location.href;
-                    const positionTochange = currentLocation.lastIndexOf('/');
-                    let newLocation = currentLocation.slice(0, positionTochange + 1) + 'post.html#' + dataToRender.id
-                    location.assign(newLocation);
-                }
-            })
-            .catch(error => {
-                alert(`Error: ${error} ${error.message}`);
-            });
-        const delForm = document.getElementById('add');
-        delForm.remove();
+}
+function validateTitle() {
+    const title = document.getElementById('postTitle');
+    const titleRegExp = /^(\w*\s*[ ,!:?.-]*)*$/ug;
+    let postButton = document.getElementById('postButton');
+    if (!postButton.getAttribute('disabled')) {
+        postButton.setAttribute('disabled', '');
     }
+    if (title.value.length > 0) {
+        const a = title.value[0].toUpperCase();
+        const b = title.value[0];
 
-    function validateTitle() {
-        const title = document.getElementById('title-input');
-        const titleRegExp = /^(\w*\s*[ ,!:?.//-]*)*$/ug;
-        let postButton = document.getElementById('add-button');
-        if (!postButton.getAttribute('disabled')) {
-            postButton.setAttribute('disabled', '');
-        }
-        const a = title.value[0].toUpperCase()
-        const b = title.value[0]
-        const minTitleLength = 2;
-        const maxTitleLendth = 20;
-        if (a !== b) {
-            showErrorMessage('Title must start with an uppercase letter', 'title');
+        if (a !== b || !b.match(/[a-z]/i)) {
+            showErrorMessage('Title must start with an uppercase letter', 'labelTitle');
         } else if (!title.value) {
-            showErrorMessage(`Can't be blank`, 'title');
-        } else if (title.value.length < minTitleLength) {
-            showErrorMessage(`Too short. Title length must be more than 2 characters`, 'title');
-        } else if (title.value.length > maxTitleLendth) {
-            showErrorMessage(`Too long. Title length must be less than 20 characters`, 'title');
+            showErrorMessage(`Can't be blank`, 'labelTitle');
+        } else if (title.value.length < 2) {
+            showErrorMessage(`Too short. Title length must be more than 2 characters`, 'labelTitle');
+        } else if (title.value.length > 19) {
+            showErrorMessage(`Too long. Title length must be less than 20 characters`, 'labelTitle');
         } else if (!titleRegExp.test(title.value)) {
-            showErrorMessage(`Title can contain letters and special characters including space: [ !:-?.,]`, 'title');
+            showErrorMessage(`Title can contain letters and special characters including space: [ !:-?.,]`, 'labelTitle');
         } else {
             postButton.removeAttribute('disabled', '');
         }
+        title.addEventListener('focus', deleteErrorMessage)
+    }
+}
+
+function showErrorMessage(errorMessage, parentId) {
+    const checkError = document.getElementById('shownError');
+    if (checkError) {
+        checkError.remove();
     }
 
-    //show error message if title is not valid
-    function showErrorMessage(errorMessage, parentId) {
-        const delay = 4000;
-        let parentElement = document.getElementById(parentId);
-        let errorElement = document.createElement('div');
-        errorElement.innerText = errorMessage;
-        errorElement.style.color = 'red';
-        errorElement.setAttribute('id', 'shownError')
-        parentElement.prepend(errorElement);
+    let parentElement = document.getElementById(parentId);
+    let errorElement = document.createElement('div');
+    errorElement.innerText = errorMessage;
+    errorElement.style.color = 'red';
+    errorElement.setAttribute('id', 'shownError')
+    parentElement.prepend(errorElement);
+}
 
-        setTimeout(() => {
-            const errorToDelete = document.getElementById('shownError');
-            errorToDelete.remove();
-        }, delay);
+function deleteErrorMessage() {
+    let errorElement = document.getElementById('shownError');
+    if (errorElement) {
+        errorElement.remove();
     }
-}())
+}
+
+function closeForm() {
+    if (event.target === closeButton) {
+        formWrapper.style.display = 'none';
+    }
+}
+
+function openForm() {
+    formWrapper.style.display = 'block';
+}
