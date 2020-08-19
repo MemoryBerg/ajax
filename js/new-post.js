@@ -29,7 +29,7 @@ const data = [
                     },
                     {
                         tagName: 'option',
-                        title: 'Audio'
+                        title: 'Music'
                     },
                     {
                         tagName: 'option',
@@ -296,8 +296,15 @@ function getPostInfo() {
         }).toLowerCase();
         postDate = postDate.replace(new RegExp(' 2'), ',' + ' 2');
     }
-
     postInfo.postDate = postDate;
+    postInfo.rate = [
+        "./img/atom-icons/Star.svg",
+        "./img/atom-icons/Star-1.svg",
+        "./img/atom-icons/Star-1.svg",
+        "./img/atom-icons/Star-1.svg",
+        "./img/atom-icons/Star-1.svg"
+    ];
+
     sendPostToServer(JSON.stringify(postInfo))
 }
 

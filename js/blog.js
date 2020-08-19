@@ -26,9 +26,9 @@
         const serverData = getPostsListFromServer();
         serverData
             .then(res => {
-                let dataToRender = res;
+                let dataToRender = res.reverse();
                 if (res.length >= 5) {
-                    dataToRender = res.slice(1, 5);
+                    dataToRender = res.slice(0, 4).reverse();
                 }
                 dataToRender.forEach(element => {
                     renderPost(element)
@@ -40,26 +40,23 @@
                     post.addEventListener('click', postButtonClick)
                 })
             })
-
+            .catch(error => {
+                alert(`Error: ${error} ${error.message}`);
+            });
     }
 
     function parseData(data) {
         const dataToPost = {
-            title: data.title,
+            ...data,
             type: data.type.toLowerCase(),
-            image: data.image,
-            author: data.author,
             text: data.post,
-            quote: data.quote,
-            date: data.postDate,
-            id: data.id,
             min: data.min || 'some',
             comment: data.comment || '0',
             likes: data.likes || 0,
             read: data.read || 'more',
             pic: data.pic || './img/post/uncknown.png',
-            rate: data.rate,
         }
+
         switch (dataToPost.type) {
             case 'music':
                 dataToPost.icon = 'melody';
@@ -73,10 +70,9 @@
             case 'text':
                 dataToPost.icon = 'text';
                 break;
-            default:
-                dataToPost.icon = 'no type';
+            // default:
+            //     dataToPost.icon = 'no type';
         }
-
         return dataToPost;
     }
 
@@ -218,14 +214,14 @@
         let newElement = document.createElement(tagName);
         if (classList) {
             classList.forEach(className => {
-                className && newElement.classList.add(className)
+                newElement.classList.add(className)
             })
         }
         if (id) {
             newElement.id = id;
         }
         if (attributes) {
-            attributes && attributes.forEach((attr) => {
+            attributes.forEach((attr) => {
                 Object.entries(attr).forEach(prop => {
                     newElement.setAttribute(prop[0], prop[1])
                 })
@@ -250,7 +246,7 @@
             }
         }
         if (children) {
-            children && children.forEach(child => {
+            children.forEach(child => {
                 builder(child, newElement, data)
             })
         }
@@ -312,40 +308,26 @@
     }
 
     function createRate(data) {
-        if (data.rate) {
-            const rate = {
-                tagName: 'div',
-                classList: ['author__rate', 'post__rate'],
-                children: []
-            }
-            if (data.rate) {
-                data.rate.forEach(star => {
-                    rate.children[rate.children.length] = {
-                        tagName: 'object',
-                        attributes: [
-                            {
-                                data: star,
-                                type: 'image/svg+xml'
-                            }
-                        ]
-                    }
-                });
-            } else {
-                for (let i = 0; i <= 5; i++) {
-                    rate.children[rate.children.length] = {
-                        tagName: 'object',
-                        attributes: [
-                            {
-                                data: './img/atom-icons/Star-1.svg',
-                                type: 'image/svg+xml'
-                            }
-                        ]
-                    }
-
-                }
-            }
-            return rate;
+        if (!data.rate) {
+            return;
         }
+        const rate = {
+            tagName: 'div',
+            classList: ['author__rate', 'post__rate'],
+            children: []
+        }
+        data.rate.forEach(star => {
+            rate.children[rate.children.length] = {
+                tagName: 'object',
+                attributes: [
+                    {
+                        data: star,
+                        type: 'image/svg+xml'
+                    }
+                ]
+            }
+        });
+        return rate;
     }
 
     function createMusic(data) {

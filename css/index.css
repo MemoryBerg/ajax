@@ -3709,7 +3709,8 @@ textarea.form-control {
   align-self: start;
 }
 .add__button {
-  margin: 0 10px;
+  margin: 0 10px !important;
+  display: inline-block !important;
 }
 .add__desc {
   height: 150px;

@@ -1,6 +1,8 @@
 (function () {
     let postId = 0;
-    window.addEventListener('hashchange', renderPostFromServer);
+    window.addEventListener('hashchange', () => {
+        location.reload();
+    });
 
     renderPostFromServer();
 
